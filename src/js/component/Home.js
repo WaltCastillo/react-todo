@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "bootstrap";
-//import PropTypes from "prop-types";
-// la app usa enter para ingresar cada tarea
-//create your first component
+
 export function Home() {
 	const [list, setlist] = useState([]);
 
@@ -28,7 +26,7 @@ export function Home() {
 
 			<input
 				type="text"
-				placeholder="What needs to be done?"
+				placeholder="ingrese una tarea"
 				onKeyDown={event => myFunction(event)}
 				className="m-2"
 			/>
@@ -40,16 +38,13 @@ export function Home() {
 							key={index}>
 							{item}{" "}
 							<button
-								className="btn btn-danger m-3"
+								className="btn btn-warning m-3"
 								onClick={() => DeleteItems(index)}>
 								X
 							</button>
 						</li>
 					);
 				})}
-				<div id="espacio"></div>
-				<p>{list.length + "   item left"}</p>
-				<div id="espacio"></div>
 			</ul>
 		</div>
 	);
